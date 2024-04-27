@@ -47,7 +47,7 @@ def baixar_musica():
         if url:
             yt = YouTube(url)
             print(f"Iniciando download: {yt.title}")
-            flash(yt.title)
+            flash("Audio: ",yt.title)
             stream_video = yt.streams.get_highest_resolution()
             caminho_video = stream_video.download(output_path=caminho_salvar)
             titulo_video = yt.title

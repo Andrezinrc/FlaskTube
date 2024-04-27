@@ -9,6 +9,7 @@
     <input class="campo-url" type="text" placeholder="URL do vídeo que deseja baixar" name="url" required>
     <br><br><br>
     <input class="botao-baixar" type="submit" value="Fazer download">
+    <br>
     {% with mensagens = get_flashed_messages() %}
     {% for mensagem in mensagens %}
         {% if download_sucesso %}

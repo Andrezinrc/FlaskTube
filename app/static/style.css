@@ -1,13 +1,17 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body{
-  background-color: #AED6F1;
   padding: 50px;
+  background: linear-gradient(to bottom, #87CEEB, #663399);
+  height: 100vh;
+  
 }
 .container-inicio{
   padding: 50px;
@@ -23,18 +27,18 @@ body{
 }
 
 .botao{
-  background-color: #3498db;
+  background-color: #ffa500;
   width: 330px;
   height: 40px;
   text-align: center;
   margin-bottom: 20px;
   padding-top: 10px;
+  border-radius: 5px;
 }
 
-.botao:hover{
-  background-color: #2980b9;
+.botao:hover {
+    background-color: #ff7f00;
 }
-
 .inicio a{
   text-decoration: none;
   color: white;
@@ -50,13 +54,12 @@ body{
   font-size: 15px;
   color: #333333;
 }
-video{
-  width: 100%;
-  background-color: #333333;
-}
 .titulo-video{
   font-size: 15px;
   color: #333333;
+}
+video{
+  width: 100%;
 }
 form{
   width: 100%;
@@ -69,6 +72,7 @@ form{
 }
 
 .campo-url{
+  border-radius: 5px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -84,12 +88,13 @@ form{
  transform: translateX(-50%);
  width: 90%;
  height: 40px;
- background-color: #3498db;
+ background-color: #ffa500;
  color: white;
  border: 0;
+ border-radius: 5px;
 }
 .botao-baixar:hover{
-  background-color: #2980b9;
+  background-color: #ff7f00;
 }
 .sucess {
   text-align: center;
@@ -107,6 +112,7 @@ form{
 .paragrafo-aviso{
   text-align: center;
   margin-bottom: 50px;
+  color: #fff;
 }
 
 .musicas{
@@ -117,8 +123,11 @@ form{
   transform: translate(-50%, -50%);
 }
 @media screen and (max-width: 460px){
+  body{
+    padding: 20px;
+  }
   .container-inicio{
-    padding: 20px;.
+    padding: 20px;
   }
   form{
     padding: 20px;

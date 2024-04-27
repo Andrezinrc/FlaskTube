@@ -6,14 +6,13 @@
 
     {% if videos %}
       {% for video in videos %}
-        <div class="row justify-content-center">
+        <div class="row justify-content-center container-video">
           <div class="col-md-8">
-            <div class="card p-2 container-video mb-3">
+            <div class="card p-2 mb-3">
               <video class="w-100" height="240" controls>
                 <source src="{{ url_for('reproduzir_video', video_nome=video) }}" type="video/mp4">
                 Seu navegador não suporta o elemento de vídeo.
               </video>
-              <p class="text-light mt-3">{{ video }}</p>
             </div>
           </div>
         </div>
