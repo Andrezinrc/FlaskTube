@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request, flash, send_from_directory
 from pytube import YouTube
 from pydub import AudioSegment
 import os
@@ -65,27 +65,26 @@ def baixar_musica():
 @app.route("/ver_videos")
 def ver_videos():
     caminho_video = caminho + "/Download/meu_pytube_video"
-    videos = os.listdir(caminho_video)
-    for video in videos:
-        print("video: ", video)
+    videos = [f for f in os.listdir(caminho_video) if f.endswith('.mp4')]
     return render_template("ver_videos.html", videos=videos, caminho_video=caminho_video)
 
-caminho_video = caminho + "/Download/meu_pytube_video"
 @app.route('/ver_videos/<video_nome>')
 def reproduzir_video(video_nome):
+    caminho_video = caminho + "/Download/meu_pytube_video"
     return send_from_directory(caminho_video, video_nome)
 
 @app.route("/ver_musicas")
 def ver_musicas():
     caminho_musica = caminho + "/Download/meu_pytube_musica"
-    musicas = os.listdir(caminho_musica)
+    musicas = [f for f in os.listdir(caminho_musica) if f.endswith('.mp3')]
     for musica in musicas:
         print("musica: ",musica)
     return render_template("ver_musicas.html", musicas=musicas, caminho_musica=caminho_musica)
 
-caminho_video = caminho + "/Download/meu_pytube_musica"
 @app.route("/ver_musicas/<musica_nome>")
 def reproduzir_musica(musica_nome):
-    return send_from_directory(caminho_video, video_nome)
+    caminho_musica = caminho + "/Download/meu_pytube_musica"
+    return send_from_directory(caminho_musica, musica_nome)
+
 if __name__ == "__main__":
     app.run(debug=True)

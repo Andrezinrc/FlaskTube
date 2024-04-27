@@ -4,9 +4,9 @@
 
 <form action="/baixar_musica" method="get">
     <h2 class="titulo">Converter para Música</h2>
-    <input class="campo-url" type="text" placeholder="Nome da pasta onde deseja salvar o download" name="pasta">
+    <input class="campo-url" type="text" placeholder="Nome da pasta onde deseja salvar o download" name="pasta" required>
     <br><br><br>
-    <input class="campo-url" type="text" placeholder="URL da música que deseja baixar" name="url">
+    <input class="campo-url" type="text" placeholder="URL da música que deseja baixar" name="url" required>
     <br><br><br>
     <input class="botao-baixar" type="submit" value="Fazer download">
     {% with mensagens = get_flashed_messages() %}

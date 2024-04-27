@@ -1,13 +1,18 @@
 {% extends 'base.html' %}
-
 {% block conteudo %}
-<div class="musicas">
-    <h2 class="titulo">Minhas Músicas</h2>
-    {% for musica in musicas %}
-    <h2 class="titulo-musica">{{ musica }}</h2>
-    <audio controls>
-	    <source src="{{ url_for('ver_musicas', ver_musicas=musica) }}" type="audio/mp3">
-    </audio>
-    {% endfor %}
+
+<div class="container">
+    <div class="musicas">
+	<h2 class="titulo">Minhas Músicas</h2>
+        {% for musica in musicas %}
+            <div class="text-center mb-4">
+                <h2 class="titulo-musica">{{ musica }}</h2>
+                <audio controls style="outline: none; width: 100%;">
+                    <source src="{{ url_for('reproduzir_musica', musica_nome=musica) }}" type="audio/mp3">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}
