@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<div class="musicas">
+    <h2 class="titulo">Minhas Músicas</h2>
+    {% for musica in musicas %}
+    <h2 class="titulo-musica">{{ musica }}</h2>
+    <audio controls>
+	    <source src="{{ url_for('ver_musicas', ver_musicas=musica) }}" type="audio/mp3">
+    </audio>
+    {% endfor %}
+</div>
+{% endblock %}

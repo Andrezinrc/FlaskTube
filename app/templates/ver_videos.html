@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<h2 class="titulo">Meus Vídeos</h2>
+<div class="videos">
+    {% for video in videos %}
+        {% if video %}
+	    <h2 class="titulo-video"></h2>
+            <video controls>
+		<source src="{{ url_for('ver_videos', video_nome=video) }}" type="video/mp4">
+            </video>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<form action="/baixar_musica" method="get">
+    <h2 class="titulo">Converter para Música</h2>
+    <input class="campo-url" type="text" placeholder="Nome da pasta onde deseja salvar o download" name="pasta">
+    <br><br><br>
+    <input class="campo-url" type="text" placeholder="URL da música que deseja baixar" name="url">
+    <br><br><br>
+    <input class="botao-baixar" type="submit" value="Fazer download">
+    {% with mensagens = get_flashed_messages() %}
+    {% for mensagem in mensagens %}
+      {% if download_sucesso %}
+      <p class="sucess">{{ mensagem }}</p>
+      {% else %}
+      <p class="error">{{ mensagem }}</p>
+      {% endif %}
+    {% endfor %}
+    {% endwith %}
+</form>
+{% endblock %}
