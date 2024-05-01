@@ -4,6 +4,7 @@
 
 <div class="ver-musica">
    <h1 class="titulo">Minhas Musicas</h1>
+        {% if musicas %}
         {% for musica in musicas %}
             <div class="musicas">
                 <h2 class="titulo-musica">{{ musica }}</h2>
@@ -13,5 +14,8 @@
                 </audio>
             </div>
         {% endfor %}
+	{% else %}
+	<p class="aviso-sem-musica">Não há Musicas baixadas.</p>
+	{% endif %}
 </div>
 {% endblock %}

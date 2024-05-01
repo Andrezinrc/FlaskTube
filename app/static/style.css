@@ -114,6 +114,14 @@ form{
   text-align: center;
   color: red;
 }
+.nao-tem-video{
+  text-align: center;
+  color: white;
+}
+.aviso-sem-musica{
+  text-align: center;
+  color: white;
+}
 .paragrafo-aviso{
   text-align: center;
   margin-bottom: 50px;
