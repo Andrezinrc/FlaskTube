@@ -2,18 +2,18 @@
 
 {% block conteudo %}
 
+<div class="container-baixar-video">
 <form action="/baixar_video" method="get">
     <h1 class="titulo">Download de Vídeo</h1>
-    <input class="campo-url" type="text" placeholder="Nome da pasta onde deseja salvar o download" name="pasta" required>
-    <br><br><br>
     <input class="campo-url" type="text" placeholder="URL do vídeo que deseja baixar" name="url" required>
     <br><br><br>
-    <input class="botao-baixar" type="submit" value="Fazer download">
-    <br>
+    <input class="botao-baixar" type="submit" name="download_iniciado" value="Fazer download">
+    <br><br>
+    <p>{{ aviso_download }}</p>
     {% with mensagens = get_flashed_messages() %}
     {% for mensagem in mensagens %}
         {% if download_sucesso %}
-            <p class="sucess">{{ mensagem }}</p>
+            <p class="sucesso">{{ mensagem }}</p>
         {% else %}
             <p class="error">{{ mensagem }}</p>
         {% endif %}
@@ -27,5 +27,5 @@
         </ul>
     {% endfor %}
 </form>
-
+</div>
 {% endblock %}
