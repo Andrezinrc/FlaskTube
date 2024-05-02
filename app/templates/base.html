@@ -9,6 +9,25 @@
   <title>baixar videos e musicas</title>
 </head>
 <body>
-      {% block conteudo %} {% endblock %}
+      {% block conteudo %} 
+      <script>
+        // Função para criar um floco de neve
+function createSnowflake() {
+    const snowflake = document.createElement("div");
+    snowflake.classList.add("snowflake");
+    snowflake.style.left = Math.random() * window.innerWidth + "px";
+    snowflake.style.animationDuration = Math.random() * 3 + 2 + "s";
+    document.getElementById("snow-container").appendChild(snowflake);
+
+    // Remover o floco de neve depois que ele desaparecer da tela
+    snowflake.addEventListener("animationend", () => {
+        snowflake.remove();
+    });
+}
+
+// Criar flocos de neve em intervalos regulares
+setInterval(createSnowflake, 500);
+      </script>
+      {% endblock %}
 </body>
 </html>
