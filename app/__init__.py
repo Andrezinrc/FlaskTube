@@ -15,8 +15,7 @@ def baixar_video():
     download_sucesso = False
     try:
         url = request.args.get("url")
-        caminho_salvar = "/storage/emulated/0/Download"
-
+        caminho_salvar = "C:\\Users\\Andrezinrc1\\Downloads"
         if request.args.get("download_iniciado"):
             if url:
                 ydl_opts = {
